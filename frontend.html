@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Study AI Platform</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; background: #f9f9f9; }
+    h1 { text-align: center; }
+    .container { max-width: 700px; margin: auto; background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px #ccc; }
+    .section { margin-bottom: 20px; }
+    input[type="file"] { display: block; margin-top: 10px; }
+    button { padding: 10px 20px; margin-top: 10px; background: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer; }
+    button:hover { background: #0056b3; }
+    .output { background: #eef; padding: 10px; border-radius: 5px; margin-top: 10px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>📚 AI Study Platform</h1>
+
+    <div class="section">
+      <h3>1. Upload Document</h3>
+      <input type="file" id="docInput" />
+      <div id="fileStatus" class="output">No file uploaded.</div>
+    </div>
+
+    <div class="section">
+      <h3>2. Generate Assessment</h3>
+      <button onclick="generateQuiz()">Generate Quiz</button>
+      <div id="quizOutput" class="output">Quiz will appear here.</div>
+    </div>
+
+    <div class="section">
+      <h3>3. Progress Analytics</h3>
+      <div id="analytics" class="output">Analytics will be shown here.</div>
+    </div>
+
+    <div class="section">
+      <h3>4. AI Study Recommendations</h3>
+      <div id="recommendation" class="output">Recommendations will appear here.</div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('docInput').addEventListener('change', function() {
+      const file = this.files[0];
+      document.getElementById('fileStatus').textContent = file ? 'Uploaded: ${file.name}' : 'No file uploaded.';
+    });
+
+    function generateQuiz() {
+      // Placeholder logic for demonstration
+      document.getElementById('quizOutput').textContent = 'Q1: What is AI?\nA: Artificial Intelligence.';
+      document.getElementById('analytics').textContent = 'Score: 80% | Time: 5 mins';
+      document.getElementById('recommendation').textContent = 'Review: Chapter 3 - Neural Networks.';
+    }
+  </script>
+</body>
+</html>
